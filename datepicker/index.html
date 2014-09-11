@@ -1,50 +1,50 @@
 <!-- template.html -->
 <html>
 <head>
-	<title>React Date Picker</title>
-	<script src="http://fb.me/react-0.11.1.js"></script>
-	<script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
-	<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <title>React Date Picker</title>
+    <script src="http://fb.me/react-0.11.1.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 </head>
 <body>
-	<div id="content"></div>
-	<script type="text/jsx">
-		/** @jsx React.DOM */
+    <div id="content"></div>
+    <script type="text/jsx">
+        /** @jsx React.DOM */
 
-		var DatePicker = React.createClass({
-			componentDidMount: function() {
-				$(this.getDOMNode()).datepicker();
-			},
-			render: function(){
-				return(
-					<input type="text" />
-				);
-			}
-		});
+        var DatePicker = React.createClass({
+            componentDidMount: function() {
+                $(this.getDOMNode()).datepicker();
+            },
+            render: function(){
+                return(
+                    <input type="text" />
+                );
+            }
+        });
 
-		var TestForm = React.createClass({
-			handleSubmit: function(e) {
-				e.preventDefault();
-				console.log(this.refs.date1.getDOMNode().value);
-				console.log(this.refs.date2.getDOMNode().value);
-			},
-			render: function(){
-				return(
-					<form onSubmit={this.handleSubmit}>
-						<DatePicker ref="date1" />
-						<DatePicker ref="date2" />
-						<input type="submit" value="submit" />
-					</form>
-				);
-			}
-		})
+        var TestForm = React.createClass({
+            handleSubmit: function(e) {
+                e.preventDefault();
+                console.log(this.refs.date1.getDOMNode().value);
+                console.log(this.refs.date2.getDOMNode().value);
+            },
+            render: function(){
+                return(
+                    <form onSubmit={this.handleSubmit}>
+                        <DatePicker ref="date1" />
+                        <DatePicker ref="date2" />
+                        <input type="submit" value="submit" />
+                    </form>
+                );
+            }
+        })
 
-		React.renderComponent(
-			<TestForm />,
-			document.getElementById('content')
-		)
+        React.renderComponent(
+            <TestForm />,
+            document.getElementById('content')
+        )
 
-	</script>
+    </script>
 </body>
 </html>

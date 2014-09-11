@@ -1,67 +1,67 @@
 <!-- template.html -->
 <html>
 <head>
-	<title>React Status Page</title>
-	<script src="http://fb.me/react-0.11.1.js"></script>
-	<script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
-	<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <title>React Status Page</title>
+    <script src="http://fb.me/react-0.11.1.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 </head>
 <body>
-	<div id="content"></div>
-	<script type="text/jsx">
-		/** @jsx React.DOM */
+    <div id="content"></div>
+    <script type="text/jsx">
+        /** @jsx React.DOM */
 
-		var components = [
-			{type: 'calendar'},
-			{type: 'metrics'},
-			{type: 'calendar'}
-		];
+        var components = [
+            {type: 'calendar'},
+            {type: 'metrics'},
+            {type: 'calendar'}
+        ];
 
-		var StatusPage = React.createClass({
-			render: function(){
-				var componentHash = {
-					'calendar': <Calendar />,
-					'metrics': <Metrics />
-				};
+        var StatusPage = React.createClass({
+            render: function(){
+                var componentHash = {
+                    'calendar': <Calendar />,
+                    'metrics': <Metrics />
+                };
 
-				var componentNodes = this.props.components.map(function(component){
-					return(componentHash[component.type]);
-				});
+                var componentNodes = this.props.components.map(function(component){
+                    return(componentHash[component.type]);
+                });
 
-				return(
-					<div>
-						{componentNodes}
-					</div>
-				);
-			}
-		});
+                return(
+                    <div>
+                        {componentNodes}
+                    </div>
+                );
+            }
+        });
 
-		var Calendar = React.createClass({
-			render: function(){
-				return(
-					<div>
-						this is the calendar component
-					</div>
-				);
-			}
-		});
+        var Calendar = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                        this is the calendar component
+                    </div>
+                );
+            }
+        });
 
-		var Metrics = React.createClass({
-			render: function(){
-				return(
-					<div>
-						this is the metrics component
-					</div>
-				);
-			}
-		});
+        var Metrics = React.createClass({
+            render: function(){
+                return(
+                    <div>
+                        this is the metrics component
+                    </div>
+                );
+            }
+        });
 
-		React.renderComponent(
-			<StatusPage components={components} />,
-			document.getElementById('content')
-		)
+        React.renderComponent(
+            <StatusPage components={components} />,
+            document.getElementById('content')
+        )
 
-	</script>
+    </script>
 </body>
 </html>
