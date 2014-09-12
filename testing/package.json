@@ -1,0 +1,22 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "CheckboxWithLabel-test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest-cli": "^0.1.18",
+    "react": "*",
+    "react-tools": "*"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
+}
